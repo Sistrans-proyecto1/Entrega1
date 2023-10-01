@@ -9,7 +9,7 @@ import jakarta.persistence.ManyToOne;
 @Embeddable
 public class SirvenPK implements Serializable{
     @ManyToOne
-    @JoinColumn(name="servicios_id", referencedColumnName = "id")
+    @JoinColumn(name="serviciosProductos_servicios_id", referencedColumnName = "servicios_id")
     private ServicioProducto serviciosProductos_servicios_id;
 
     @ManyToOne

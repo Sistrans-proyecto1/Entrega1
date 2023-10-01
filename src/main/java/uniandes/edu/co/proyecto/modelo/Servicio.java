@@ -15,9 +15,11 @@ public class Servicio {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nombre;
+
     @ManyToOne
     @JoinColumn(name="hoteles_id", referencedColumnName = "id")
     private Hotel hotel_id;
+    
     public Servicio(String nombre, Hotel hotelid) {
         this.nombre = nombre;
         this.hotel_id = hotelid;
