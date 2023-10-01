@@ -1,6 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
@@ -8,6 +9,7 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="habitaciones")
 public class Habitacion {
+    @Id
     private boolean ubicacion;
     private boolean television;
     private boolean minibar;

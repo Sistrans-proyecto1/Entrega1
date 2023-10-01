@@ -1,18 +1,19 @@
 package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-
 @Entity
 @Table(name="gimnasios")
 public class Gimnasio {
+    @Id
     private String nombre;
     private String capacidad;
     private String horario;
     @OneToOne(mappedBy = "gimnasio")
-    @JoinColumn(name="servicios", referencedColumnName = "id")
+    @JoinColumn(name="id", referencedColumnName = "id")
     private Servicio servicioid;
     
     public Gimnasio(String nombre, String capacidad, String horario, Servicio servicio) {
@@ -45,6 +46,5 @@ public class Gimnasio {
     public void setServicio(Servicio servicio) {
         this.servicioid = servicio;
     }
-    
-    
 }
+

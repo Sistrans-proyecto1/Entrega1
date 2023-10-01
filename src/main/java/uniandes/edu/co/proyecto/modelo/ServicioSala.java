@@ -1,6 +1,7 @@
 package uniandes.edu.co.proyecto.modelo;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -11,10 +12,11 @@ public class ServicioSala {
     private String nombre;
     private int capacidad;
     private int tiempoLimpieza;
-    @OneToOne(mappedBy = "serviciossalas")
+    @Id
+    @OneToOne
     @JoinColumn(name="servicios", referencedColumnName = "id")
     private Servicio servicioid;
-    
+
     public ServicioSala(String nombre, int capacidad, int tiempoLimpieza, Servicio servicioid) {
         this.nombre = nombre;
         this.capacidad = capacidad;

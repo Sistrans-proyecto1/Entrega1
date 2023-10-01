@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,48 +14,28 @@ public class Producto {
     private int id;
     private String nombre;
     private int precio;
-    @ManyToMany(mappedBy = "productos")
-    @JoinColumn(name="serviciosproductos", referencedColumnName = "id")
-    private ServicioProducto servicioid;
     
-    public Producto(String nombre, int precio, ServicioProducto servicioid) {
+    public Producto(String nombre, int precio) {
         this.nombre = nombre;
         this.precio = precio;
-        this.servicioid = servicioid;
     }
-
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getNombre() {
         return nombre;
     }
-
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
     public int getPrecio() {
         return precio;
     }
-
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-
-    public ServicioProducto getServicioid() {
-        return servicioid;
-    }
-
-    public void setServicioid(ServicioProducto servicioid) {
-        this.servicioid = servicioid;
-    }
-
-    
     
 }
