@@ -11,13 +11,13 @@ import jakarta.persistence.Table;
 public class ServicioProducto {
     private String nombre;
     private int capacidad;
-    private int tipo;
+    private String tipo;
     private String estilo;
     @Id
     @OneToOne
     @JoinColumn(name="servicios_id", referencedColumnName = "id")
     private Servicio servicios_id;
-    public ServicioProducto(String nombre, int capacidad, int tipo, String estilo, Servicio servicios_id) {
+    public ServicioProducto(String nombre, int capacidad, String tipo, String estilo, Servicio servicios_id) {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.tipo = tipo;
@@ -36,10 +36,10 @@ public class ServicioProducto {
     public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
     }
-    public int getTipo() {
+    public String getTipo() {
         return tipo;
     }
-    public void setTipo(int tipo) {
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
     public String getEstilo() {
