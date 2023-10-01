@@ -12,12 +12,12 @@ public class Spa {
     private int duracion;
     @Id
     @OneToOne(mappedBy = "spa")
-    @JoinColumn(name="servicios", referencedColumnName = "id")
-    private Servicio servicioid;
+    @JoinColumn(name="servicios_id", referencedColumnName = "id")
+    private Servicio servicios_id;
 
     public Spa(int duracion, Servicio servicioid) {
         this.duracion = duracion;
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
     public int getDuracion() {
         return duracion;
@@ -26,10 +26,10 @@ public class Spa {
         this.duracion = duracion;
     }
     public Servicio getServicioid() {
-        return servicioid;
+        return servicios_id;
     }
     public void setServicioid(Servicio servicioid) {
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
     
 }

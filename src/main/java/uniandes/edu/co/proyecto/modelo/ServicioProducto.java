@@ -15,15 +15,15 @@ public class ServicioProducto {
     private String estilo;
     @Id
     @OneToOne(mappedBy = "serviciosproductos")
-    @JoinColumn(name="id", referencedColumnName = "id")
-    private Servicio servicioid;
+    @JoinColumn(name="servicios_id", referencedColumnName = "id")
+    private Servicio servicios_id;
 
     public ServicioProducto(String nombre, int capacidad, int tipo, String estilo, Servicio servicioid) {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.tipo = tipo;
         this.estilo = estilo;
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
     public String getNombre() {
         return nombre;
@@ -50,10 +50,10 @@ public class ServicioProducto {
         this.estilo = estilo;
     }
     public Servicio getServicioid() {
-        return servicioid;
+        return servicios_id;
     }
     public void setServicioid(Servicio servicioid) {
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
     
 }

@@ -12,12 +12,12 @@ public class Internet {
     private int capacidad;
     @Id
     @OneToOne(mappedBy = "internet")
-    @JoinColumn(name="servicios", referencedColumnName = "id")
-    private Servicio servicioid;
+    @JoinColumn(name="servicios_id", referencedColumnName = "id")
+    private Servicio servicios_id;
 
     public Internet(int capacidad, Servicio servicioid) {
         this.capacidad = capacidad;
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
 
     public int getCapacidad() {
@@ -29,11 +29,11 @@ public class Internet {
     }
 
     public Servicio getServicioid() {
-        return servicioid;
+        return servicios_id;
     }
 
     public void setServicioid(Servicio servicioid) {
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
     
 }

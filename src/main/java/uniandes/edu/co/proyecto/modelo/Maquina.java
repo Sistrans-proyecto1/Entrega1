@@ -16,7 +16,7 @@ public class Maquina {
     private int id;
     private String nombre;
     @ManyToOne
-    @JoinColumn(name="gimnasios", referencedColumnName = "id")
+    @JoinColumn(name="servicios_id", referencedColumnName = "id")
     private Gimnasio gimnasioid;
     public Maquina(String nombre, Gimnasio gimnasioid) {
         this.nombre = nombre;

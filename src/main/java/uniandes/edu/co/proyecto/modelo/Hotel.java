@@ -18,14 +18,14 @@ public class Hotel {
     private String ciudad;
     private String pais;
     @ManyToOne
-    @JoinColumn(name = "cadenashoteles", referencedColumnName = "id")
-    private CadenaHoteles cadenaHotelesid;
+    @JoinColumn(name = "cadenashoteles_id", referencedColumnName = "id")
+    private CadenaHoteles cadenaHoteles_id;
 
     public Hotel(String nombre, String ciudad, String pais, CadenaHoteles cadenaHotelesid) {
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.pais = pais;
-        this.cadenaHotelesid = cadenaHotelesid;
+        this.cadenaHoteles_id = cadenaHotelesid;
     }
     public int getId() {
         return id;
@@ -52,10 +52,10 @@ public class Hotel {
         this.pais = pais;
     }
     public CadenaHoteles getCadenaHotelesid() {
-        return cadenaHotelesid;
+        return cadenaHoteles_id;
     }
     public void setCadenaHotelesid(CadenaHoteles cadenaHotelesid) {
-        this.cadenaHotelesid = cadenaHotelesid;
+        this.cadenaHoteles_id = cadenaHotelesid;
     }
 
     

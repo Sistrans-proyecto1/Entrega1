@@ -8,12 +8,12 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name="gimnasios")
 public class Gimnasio {
-    @Id
     private String nombre;
     private String capacidad;
     private String horario;
+    @Id
     @OneToOne(mappedBy = "gimnasio")
-    @JoinColumn(name="id", referencedColumnName = "id")
+    @JoinColumn(name="servicios_id", referencedColumnName = "id")
     private Servicio servicioid;
     
     public Gimnasio(String nombre, String capacidad, String horario, Servicio servicio) {
