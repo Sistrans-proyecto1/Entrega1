@@ -19,11 +19,11 @@ public class Empleado {
     private String correo;
     private int telefono;
     @ManyToOne
-    @JoinColumn(name="hoteles", referencedColumnName = "id")
-    private Hotel hotelid;
+    @JoinColumn(name="hoteles_id", referencedColumnName = "id")
+    private Hotel hoteles_id;
     @ManyToOne
-    @JoinColumn(name="tiposempleado", referencedColumnName = "id")
-    private TipoEmpleado tipoEmpleado;
+    @JoinColumn(name="tiposempleado_id", referencedColumnName = "id")
+    private TipoEmpleado tiposEmpleado_id;
 
     public Empleado(int id, String nombre, int edad, String correo, int telefono, Hotel hotelid,
             TipoEmpleado tipoEmpleado) {
@@ -32,8 +32,8 @@ public class Empleado {
         this.edad = edad;
         this.correo = correo;
         this.telefono = telefono;
-        this.hotelid = hotelid;
-        this.tipoEmpleado = tipoEmpleado;
+        this.hoteles_id = hotelid;
+        this.tiposEmpleado_id = tipoEmpleado;
     }
 
     public int getId() {
@@ -77,19 +77,19 @@ public class Empleado {
     }
 
     public Hotel getHotelid() {
-        return hotelid;
+        return hoteles_id;
     }
 
     public void setHotelid(Hotel hotelid) {
-        this.hotelid = hotelid;
+        this.hoteles_id = hotelid;
     }
 
     public TipoEmpleado getTipoEmpleado() {
-        return tipoEmpleado;
+        return tiposEmpleado_id;
     }
 
     public void setTipoEmpleado(TipoEmpleado tipoEmpleado) {
-        this.tipoEmpleado = tipoEmpleado;
+        this.tiposEmpleado_id = tipoEmpleado;
     }
 
 

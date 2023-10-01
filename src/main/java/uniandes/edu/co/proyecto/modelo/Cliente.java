@@ -19,15 +19,15 @@ public class Cliente {
     private String correo;
     private int telefono;
     @ManyToOne
-    @JoinColumn(name = "hoteles", referencedColumnName = "id")
-    private Hotel IDhotel;
+    @JoinColumn(name = "hoteles_id", referencedColumnName = "id")
+    private Hotel hoteles_id;
 
     public Cliente(String nombre, int edad, String correo, int telefono, Hotel iDhotel) {
         this.nombre = nombre;
         this.edad = edad;
         this.correo = correo;
         this.telefono = telefono;
-        this.IDhotel = iDhotel;
+        this.hoteles_id = iDhotel;
     }
 
     public int getId() {
@@ -71,11 +71,11 @@ public class Cliente {
     }
 
     public Hotel getIDhotel() {
-        return IDhotel;
+        return hoteles_id;
     }
 
     public void setIDhotel(Hotel iDhotel) {
-        this.IDhotel = iDhotel;
+        this.hoteles_id = iDhotel;
     }
     
 

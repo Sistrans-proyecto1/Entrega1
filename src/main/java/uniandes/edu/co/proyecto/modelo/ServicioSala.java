@@ -14,14 +14,14 @@ public class ServicioSala {
     private int tiempoLimpieza;
     @Id
     @OneToOne
-    @JoinColumn(name="servicios", referencedColumnName = "id")
-    private Servicio servicioid;
+    @JoinColumn(name="servicios_id", referencedColumnName = "id")
+    private Servicio servicios_id;
 
     public ServicioSala(String nombre, int capacidad, int tiempoLimpieza, Servicio servicioid) {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.tiempoLimpieza = tiempoLimpieza;
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
     public String getNombre() {
         return nombre;
@@ -42,10 +42,10 @@ public class ServicioSala {
         this.tiempoLimpieza = tiempoLimpieza;
     }
     public Servicio getServicioid() {
-        return servicioid;
+        return servicios_id;
     }
     public void setServicioid(Servicio servicioid) {
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
     
 }

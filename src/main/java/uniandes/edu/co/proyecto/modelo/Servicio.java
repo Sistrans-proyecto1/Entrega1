@@ -16,11 +16,11 @@ public class Servicio {
     private int id;
     private String nombre;
     @ManyToOne
-    @JoinColumn(name="hoteles", referencedColumnName = "id")
-    private Hotel hotelid;
+    @JoinColumn(name="hoteles_id", referencedColumnName = "id")
+    private Hotel hotel_id;
     public Servicio(String nombre, Hotel hotelid) {
         this.nombre = nombre;
-        this.hotelid = hotelid;
+        this.hotel_id = hotelid;
     }
     public int getId() {
         return id;
@@ -35,10 +35,10 @@ public class Servicio {
         this.nombre = nombre;
     }
     public Hotel getHotelid() {
-        return hotelid;
+        return hotel_id;
     }
     public void setHotelid(Hotel hotelid) {
-        this.hotelid = hotelid;
+        this.hotel_id = hotelid;
     }
     
 }

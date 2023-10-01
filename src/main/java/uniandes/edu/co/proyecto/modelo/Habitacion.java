@@ -18,12 +18,15 @@ public class Habitacion {
     private boolean cafetera;
     private boolean cocina;
     private int precio;
+
+    @Id
     @ManyToOne
-    @JoinColumn(name="hoteles", referencedColumnName="id")
-    private Hotel hotelid;
+    @JoinColumn(name="hoteles_id", referencedColumnName="id")
+    private Hotel hoteles_id;
+
     @ManyToOne
-    @JoinColumn(name="tiposhabitación", referencedColumnName = "id")
-    private TipoHabitacion tipoHabitacion;
+    @JoinColumn(name="tiposhabitación_id", referencedColumnName = "id")
+    private TipoHabitacion tiposhabitacion_id;
     
     public Habitacion(int ubicacion, boolean television, boolean minibar, boolean comedor, boolean jacuzzi,
             boolean cafetera, boolean cocina, int precio, Hotel hotelid, TipoHabitacion tipoHabitacion) {
@@ -35,8 +38,8 @@ public class Habitacion {
         this.cafetera = cafetera;
         this.cocina = cocina;
         this.precio = precio;
-        this.hotelid = hotelid;
-        this.tipoHabitacion = tipoHabitacion;
+        this.hoteles_id = hotelid;
+        this.tiposhabitacion_id = tipoHabitacion;
     }
 
     public int Ubicacion() {
@@ -104,19 +107,19 @@ public class Habitacion {
     }
 
     public Hotel getHotelid() {
-        return hotelid;
+        return hoteles_id;
     }
 
     public void setHotelid(Hotel hotelid) {
-        this.hotelid = hotelid;
+        this.hoteles_id = hotelid;
     }
 
     public TipoHabitacion getTipoHabitacion() {
-        return tipoHabitacion;
+        return tiposhabitacion_id;
     }
 
     public void setTipoHabitacion(TipoHabitacion tipoHabitacion) {
-        this.tipoHabitacion = tipoHabitacion;
+        this.tiposhabitacion_id = tipoHabitacion;
     }
 
     

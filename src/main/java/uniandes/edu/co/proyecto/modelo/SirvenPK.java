@@ -13,7 +13,7 @@ public class SirvenPK implements Serializable{
     private ServicioProducto serviciosProductos_servicios_id;
 
     @ManyToOne
-    @JoinColumn(name="id", referencedColumnName = "id")
+    @JoinColumn(name="productos_id", referencedColumnName = "id")
     private Producto productos_id;
 
     public SirvenPK(ServicioProducto serviciosProductos_servicios_id, Producto productos_id) {

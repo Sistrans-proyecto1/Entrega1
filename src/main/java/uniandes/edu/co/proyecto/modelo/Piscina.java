@@ -14,16 +14,17 @@ public class Piscina {
     private int capacidad;
     private double profundidad;
     private Date horario;
+    
     @Id
     @OneToOne(mappedBy = "piscina")
-    @JoinColumn(name="servicios", referencedColumnName = "id")
-    private Servicio servicioid;
+    @JoinColumn(name="servicios_id", referencedColumnName = "id")
+    private Servicio servicios_id;
 
     public Piscina(int capacidad, double profundidad, Date horario, Servicio servicioid) {
         this.capacidad = capacidad;
         this.profundidad = profundidad;
         this.horario = horario;
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
     public int getCapacidad() {
         return capacidad;
@@ -44,10 +45,10 @@ public class Piscina {
         this.horario = horario;
     }
     public Servicio getServicioid() {
-        return servicioid;
+        return servicios_id;
     }
     public void setServicioid(Servicio servicioid) {
-        this.servicioid = servicioid;
+        this.servicios_id = servicioid;
     }
     
 }

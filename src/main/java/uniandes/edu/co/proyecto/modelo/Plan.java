@@ -17,12 +17,12 @@ public class Plan {
     private String nombre;
     private int costo;
     @ManyToOne
-    @JoinColumn(name="hoteles", referencedColumnName = "id")
-    private Hotel hotelid;
+    @JoinColumn(name="hoteles_id", referencedColumnName = "id")
+    private Hotel hoteles_id;
     public Plan(String nombre, int costo, Hotel hotelid) {
         this.nombre = nombre;
         this.costo = costo;
-        this.hotelid = hotelid;
+        this.hoteles_id = hotelid;
     }
     public int getId() {
         return id;
@@ -43,9 +43,9 @@ public class Plan {
         this.costo = costo;
     }
     public Hotel getHotelid() {
-        return hotelid;
+        return hoteles_id;
     }
     public void setHotelid(Hotel hotelid) {
-        this.hotelid = hotelid;
+        this.hoteles_id = hotelid;
     }
 }
