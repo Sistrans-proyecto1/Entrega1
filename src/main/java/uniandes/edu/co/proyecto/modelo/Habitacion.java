@@ -10,7 +10,7 @@ import jakarta.persistence.Table;
 @Table(name="habitaciones")
 public class Habitacion {
     @Id
-    private boolean ubicacion;
+    private int ubicacion;
     private boolean television;
     private boolean minibar;
     private boolean comedor;
@@ -25,7 +25,7 @@ public class Habitacion {
     @JoinColumn(name="tiposhabitación", referencedColumnName = "id")
     private TipoHabitacion tipoHabitacion;
     
-    public Habitacion(boolean ubicacion, boolean television, boolean minibar, boolean comedor, boolean jacuzzi,
+    public Habitacion(int ubicacion, boolean television, boolean minibar, boolean comedor, boolean jacuzzi,
             boolean cafetera, boolean cocina, int precio, Hotel hotelid, TipoHabitacion tipoHabitacion) {
         this.ubicacion = ubicacion;
         this.television = television;
@@ -39,11 +39,11 @@ public class Habitacion {
         this.tipoHabitacion = tipoHabitacion;
     }
 
-    public boolean isUbicacion() {
+    public int Ubicacion() {
         return ubicacion;
     }
 
-    public void setUbicacion(boolean ubicacion) {
+    public void setUbicacion(int ubicacion) {
         this.ubicacion = ubicacion;
     }
 
