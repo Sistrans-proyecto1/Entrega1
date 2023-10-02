@@ -9,6 +9,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.Empleado;
+import uniandes.edu.co.proyecto.modelo.Hotel;
+import uniandes.edu.co.proyecto.modelo.TipoEmpleado;
 
 public interface EmpleadoRepository extends JpaRepository<Empleado, Integer> {
 
@@ -21,12 +23,12 @@ public interface EmpleadoRepository extends JpaRepository<Empleado, Integer> {
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO empleados (id, nombre, edad, correo, teléfono, hoteles_id, tiposempleado_id) VALUES(ID_SEQUENCE.nextval, :nombre, :edad, :correo, :telefono, :hoteles_id, :tiposempleado_id)", nativeQuery = true)
-    Void insertarEmpleado(@Param("nombre") String nombre, @Param("edad") int edad, @Param("correo") String correo, @Param("telefono") int telefono, @Param("hoteles_id") int hoteles_id, @Param("tiposempleado_id") int tiposempleado_id);
+    Void insertarEmpleado(@Param("nombre") String nombre, @Param("edad") int edad, @Param("correo") String correo, @Param("telefono") int telefono, @Param("hoteles_id") Hotel hoteles_id, @Param("tiposempleado_id") TipoEmpleado tiposempleado_id);
 
     @Modifying
     @Transactional
     @Query(value = "UPDATE empleados SET nombre = :nombre, edad = :edad, correo = :correo, teléfono = :telefono, hoteles_id = :hoteles_id, tiposempleado_id = :tiposempleado_id WHERE id = :id", nativeQuery = true)
-    Void actualizarEmpleado(@Param("id") int id, @Param("nombre") String nombre, @Param("edad") int edad, @Param("correo") String correo, @Param("telefono") int telefono, @Param("hoteles_id") int hoteles_id, @Param("tiposempleado_id") int tiposempleado_id);
+    Void actualizarEmpleado(@Param("id") int id, @Param("nombre") String nombre, @Param("edad") int edad, @Param("correo") String correo, @Param("telefono") int telefono, @Param("hoteles_id") Hotel hoteles_id, @Param("tiposempleado_id") TipoEmpleado tiposempleado_id);
 
     @Modifying
     @Transactional
