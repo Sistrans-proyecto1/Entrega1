@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,6 +20,9 @@ public class Servicio {
     @ManyToOne
     @JoinColumn(name="hoteles_id", referencedColumnName = "id")
     private Hotel hotel_id;
+
+    @OneToOne(mappedBy = "servicioid")
+    private Gimnasio gimnasio;
     
     public Servicio(String nombre, Hotel hotelid) {
         this.nombre = nombre;

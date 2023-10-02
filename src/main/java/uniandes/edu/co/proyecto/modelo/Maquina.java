@@ -15,9 +15,11 @@ public class Maquina {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String nombre;
+
     @ManyToOne
-    @JoinColumn(name="servicios_id", referencedColumnName = "id")
+    @JoinColumn(name="servicioid")
     private Gimnasio gimnasioid;
+
     public Maquina(String nombre, Gimnasio gimnasioid) {
         this.nombre = nombre;
         this.gimnasioid = gimnasioid;
